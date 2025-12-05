@@ -1,0 +1,394 @@
+
+
+.quicksand{
+  font-family: "Ubuntu Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+:root {
+    --bg: #0d0d0d;
+    --text: #f2f2f2;
+    --header-start: #1a1a1a;
+    --header-end: #333333;
+    --nav-bg: #141414;
+    --muted: #888;
+    --border: #444;
+    --card-glow: 70,130,255; 
+}
+
+
+header {
+    text-align: center;
+    padding: 60px 20px 30px;
+    background: linear-gradient(135deg, var(--header-start), var(--header-end));
+    position: relative;
+    overflow: hidden;
+}
+
+#p5-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+#p5-container canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+header h1,
+header h2 {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-links {
+    position: relative;
+    z-index: 2;
+    margin-top: 14px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.hero-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.04);
+    color: #f2f2f2;
+    text-decoration: none;
+    transition: transform 160ms ease, background 160ms ease, color 160ms ease, box-shadow 160ms ease;
+    box-shadow: 0 0 0 rgba(126, 11, 176, 0);
+}
+
+.hero-link svg { display: block; }
+
+.hero-link:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    box-shadow: 0 0 16px rgba(125, 20, 169, 0.764);
+}
+
+body {
+margin: 0;
+padding: 0;
+font-family: "Ubuntu Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+background: #0d0d0d;
+color: #f2f2f2;
+font-weight: 400;
+}
+
+header h1 {
+    font-family: "Special Gothic Expanded One", "Ubuntu Sans", sans-serif;
+    font-size: 3rem;
+    margin: 0;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px 0;
+    background: #141414;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    color: #d9d9d9;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffffff;
+    box-shadow: 0 0 18px rgba(131, 12, 137, 0.738), inset 0 0 12px rgba(102,204,255,0.04);
+    border-radius: 6px;
+    padding: 8px 14px;
+}
+
+section {
+    padding: 18px 14px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Make inline SVG icons sit on the same line as the section headings */
+section > svg {
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    fill: currentColor;
+}
+
+h2 {
+    font-family: "Ubuntu Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #444;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* Articles grid layout */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 12px;
+}
+
+.article-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.article-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.article-card img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: #222;
+}
+
+.article-card h3 {
+    padding: 16px;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    background: #141414;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Projects grid layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 20px;
+    margin-top: 12px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.project-card img {
+    display: block;
+    width: 280px;
+    height: 160px;
+    object-fit: cover;
+    background: #222;
+    flex-shrink: 0;
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: #141414;
+    flex-grow: 1;
+}
+
+.project-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.project-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #b0b0b0;
+    line-height: 1.5;
+}
+
+/* Featured talk (compact) */
+.talks-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.talk-card {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.talk-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.28);
+}
+
+/* Unified gentle glow for all card-like elements on hover and keyboard focus */
+.article-card:hover,
+.project-card:hover,
+.talk-card:hover,
+.article-card:focus-visible,
+.project-card:focus-visible,
+.talk-card:focus-visible {
+    box-shadow: 0 8px 18px rgba(204, 10, 204, 0.28), 0 0 22px rgba(var(--card-glow), 0.06);
+    outline: none;
+}
+
+.talk-card img {
+    display: block;
+    width: 220px;
+    height: 124px;
+    object-fit: cover;
+    background: #222;
+    flex-shrink: 0;
+}
+
+.talk-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: #141414;
+    flex-grow: 1;
+}
+
+.talk-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.talk-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #b0b0b0;
+}
+
+.muted-note code { background: rgba(255,255,255,0.04); padding: 2px 6px; border-radius: 4px; }
+
+@media (max-width: 700px) {
+    .talk-card { flex-direction: column; }
+    .talk-card img { width: 100%; height: 180px; }
+}
+
+/* Mobile-friendly adjustments for smaller screens */
+@media (max-width: 700px) {
+    header {
+        padding: 28px 12px 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+
+    header h2 {
+        font-size: 1rem;
+        margin-top: 6px;
+    }
+
+    /* Make hero links smaller and tighter */
+    .hero-links { gap: 8px; }
+    .hero-link { width: 36px; height: 36px; border-radius: 6px; }
+
+    /* Nav becomes wrapped and tappable */
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 12px 8px;
+        justify-content: center;
+    }
+    nav a { font-size: 0.95rem; padding: 6px 10px; }
+
+    /* Sections take full width and smaller max-width */
+    section { padding: 14px 12px; max-width: 100%; }
+
+    /* Articles: smaller card images */
+    .articles-grid { gap: 14px; }
+    .article-card img { height: 160px; }
+    .article-card h3 { font-size: 0.95rem; padding: 12px; }
+
+    /* Projects: stack vertically and make images full width */
+    .projects-grid { grid-template-columns: 1fr; gap: 14px; }
+    .project-card { flex-direction: column; }
+    .project-card img { width: 100%; height: 180px; object-fit: cover; }
+    .project-content { padding: 12px; }
+
+    /* Talk cards already handled above but ensure spacing */
+    .talks-grid { gap: 12px; }
+
+    /* Reduce large shadows on mobile for readability */
+    .article-card,
+    .project-card,
+    .talk-card { box-shadow: 0 2px 8px rgba(0,0,0,0.22); }
+
+    /* p5 canvas: reduce opacity/height so header remains compact */
+    #p5-container { opacity: 0.5; }
+    #p5-container canvas { max-height: 260px; }
+}
+
+
+.ubuntu-sans{
+  font-family: "Ubuntu Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 30;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
