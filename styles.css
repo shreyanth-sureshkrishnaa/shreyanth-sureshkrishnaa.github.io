@@ -1,0 +1,118 @@
+
+
+.special-gothic-expanded-one-regular {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 40;
+  font-style: normal;
+}
+
+:root {
+    --bg: #0d0d0d;
+    --text: #f2f2f2;
+    --header-start: #1a1a1a;
+    --header-end: #333333;
+    --nav-bg: #141414;
+    --muted: #888;
+    --border: #444;
+    --toggle-bg: rgba(255,255,255,0.06);
+    --toggle-fg: #f2f2f2;
+}
+
+body.light-mode {
+    --bg: #f7f7f7;
+    --text: #111111;
+    --header-start: #ffffff;
+    --header-end: #efefef;
+    --nav-bg: #ffffff;
+    --muted: #666666;
+    --border: #dddddd;
+    --toggle-bg: rgba(0,0,0,0.06);
+    --toggle-fg: #111111;
+}
+
+
+header {
+    text-align: center;
+    padding: 60px 20px 30px;
+    background: linear-gradient(135deg, var(--header-start), var(--header-end));
+}
+
+body {
+margin: 0;
+padding: 0;
+font-family: "Special Gothic Expanded One", sans-serif;
+background: var(--bg);
+color: var(--text);
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+/* Theme toggle button (fixed, top-right) */
+#theme-toggle {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 9999;
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    border: none;
+    background: var(--toggle-bg);
+    color: var(--toggle-fg);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    transition: background 200ms ease, color 200ms ease, transform 120ms ease;
+}
+
+#theme-toggle:active { transform: scale(0.98); }
+#theme-toggle:focus { outline: 2px solid rgba(100,150,250,0.25); outline-offset: 2px; }
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px 0;
+    background: var(--nav-bg);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--text);
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
