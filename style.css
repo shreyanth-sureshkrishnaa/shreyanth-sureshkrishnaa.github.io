@@ -335,4 +335,63 @@ h2 {
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
+
+}
+
+
+
+/* Mobile-friendly adjustments for smaller screens */
+@media (max-width: 700px) {
+    header {
+        padding: 28px 12px 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+
+    header h2 {
+        font-size: 1rem;
+        margin-top: 6px;
+    }
+
+    /* Make hero links smaller and tighter */
+    .hero-links { gap: 8px; }
+    .hero-link { width: 36px; height: 36px; border-radius: 6px; }
+
+    /* Nav becomes wrapped and tappable */
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 12px 8px;
+        justify-content: center;
+    }
+    nav a { font-size: 0.95rem; padding: 6px 10px; }
+
+    /* Sections take full width and smaller max-width */
+    section { padding: 14px 12px; max-width: 100%; }
+
+    /* Articles: smaller card images */
+    .articles-grid { gap: 14px; }
+    .article-card img { height: 160px; }
+    .article-card h3 { font-size: 0.95rem; padding: 12px; }
+
+    /* Projects: stack vertically and make images full width */
+    .projects-grid { grid-template-columns: 1fr; gap: 14px; }
+    .project-card { flex-direction: column; }
+    .project-card img { width: 100%; height: 180px; object-fit: cover; }
+    .project-content { padding: 12px; }
+
+    /* Talk cards already handled above but ensure spacing */
+    .talks-grid { gap: 12px; }
+
+    /* Reduce large shadows on mobile for readability */
+    .article-card,
+    .project-card,
+    .talk-card { box-shadow: 0 2px 8px rgba(0,0,0,0.22); }
+
+    /* p5 canvas: reduce opacity/height so header remains compact */
+    #p5-container { opacity: 0.5; }
+    #p5-container canvas { max-height: 260px; }
 }
